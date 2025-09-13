@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neha Kisanchand Sachan - React Developer Portfolio</title>
+    <meta name="description" content="Neha Kisanchand Sachan - Motivated React Developer with strong DSA fundamentals. Ready to restart career after planned break. Available for frontend development roles.">
+    <meta name="author" content="Neha Kisanchand Sachan">
+    <meta name="keywords" content="React Developer, Frontend Developer, JavaScript, HTML, CSS, Data Structures, Algorithms, Portfolio, Web Development, Greater Noida">
+
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header" class="header">
+        <nav class="nav-container">
+            <div class="nav-content">
+                <div class="logo">Neha Kisanchand Sachan</div>
+                
+                <!-- Desktop Navigation -->
+                <div class="nav-links desktop-nav">
+                    <button onclick="scrollToSection('about')" class="nav-link">About</button>
+                    <button onclick="scrollToSection('certifications')" class="nav-link">Experience</button>
+                    <button onclick="scrollToSection('projects')" class="nav-link">Projects</button>
+                    <button onclick="scrollToSection('contact')" class="nav-link">Contact</button>
+                    <button onclick="scrollToSection('contact')" class="btn btn-primary">Hire Me</button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav" id="mobileNav">
+                <button onclick="scrollToSection('about')" class="mobile-nav-link">About</button>
+                <button onclick="scrollToSection('certifications')" class="mobile-nav-link">Experience</button>
+                <button onclick="scrollToSection('projects')" class="mobile-nav-link">Projects</button>
+                <button onclick="scrollToSection('contact')" class="mobile-nav-link">Contact</button>
+                <button onclick="scrollToSection('contact')" class="btn btn-primary mobile-hire-btn">Hire Me</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <!-- Text Content -->
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="highlight">Neha Kisanchand Sachan</span>
+                    </h1>
+                    <h2 class="hero-subtitle">React Developer & Frontend Specialist</h2>
+                    <p class="hero-description">
+                        Motivated React Developer with strong DSA fundamentals, ready to restart 
+                        my career after a planned break. Passionate about creating impactful 
+                        frontend applications with modern React technologies.
+                    </p>
+                    
+                    <div class="hero-buttons">
+                        <button onclick="scrollToSection('projects')" class="btn btn-secondary">View My Work</button>
+                        <button class="btn btn-outline">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7,10 12,15 17,10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Download Resume
+                        </button>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:nehasachan409@gmail.com" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Profile Image -->
+                <div class="hero-image">
+                    <div class="profile-container">
+                        <div class="profile-image">
+                            <img src="src/assets/neha-profile.jpg" alt="Neha Sachan - React Developer">
+                        </div>
+                        <div class="profile-badge">👩‍💻</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Get to know more about my journey and what drives me as a developer</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 class="about-heading">My Journey</h3>
+                    <p class="about-paragraph">
+                        I'm a motivated React Developer with strong fundamentals in Data Structures 
+                        and Algorithms. After completing my BCA in 2018, I took a planned career break 
+                        to focus on family responsibilities while continuing to upskill through projects, 
+                        courses, and self-learning in React and modern frontend technologies.
+                    </p>
+                    <p class="about-paragraph">
+                        During my break, I solved 100+ DSA problems, completed multiple certifications, 
+                        and built several React projects. Now, with refreshed skills and strong family 
+                        support, I'm ready to restart my career and contribute to impactful frontend projects.
+                    </p>
+                </div>
+                
+                <div class="about-timeline">
+                    <h3 class="about-heading">Education & Career Timeline</h3>
+                    <div class="timeline">
+                        <div class="timeline-item primary">
+                            <h4 class="timeline-title">Career Restart - Ready Now</h4>
+                            <p class="timeline-subtitle">2024 - Present | Seeking React Developer Role</p>
+                        </div>
+                        <div class="timeline-item secondary">
+                            <h4 class="timeline-title">Upskilling & Project Development</h4>
+                            <p class="timeline-subtitle">2018 - 2024 | Self-Learning & Family Focus</p>
+                        </div>
+                        <div class="timeline-item accent">
+                            <h4 class="timeline-title">Bachelor of Computer Applications (BCA)</h4>
+                            <p class="timeline-subtitle">B.J.S. College, Pune | 2018</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <polyline points="16,18 22,12 16,6"></polyline>
+                            <polyline points="8,6 2,12 8,18"></polyline>
+                        </svg>
+                    </div>
+                    <h4 class="highlight-title">Clean Code</h4>
+                    <p class="highlight-description">Writing maintainable, scalable, and well-documented code</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="highlight-title">UI/UX Focus</h4>
+                    <p class="highlight-description">Creating intuitive and beautiful user interfaces</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"></polygon>
+                        </svg>
+                    </div>
+                    <h4 class="highlight-title">Performance</h4>
+                    <p class="highlight-description">Optimizing applications for speed and efficiency</p>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h4 class="highlight-title">Collaboration</h4>
+                    <p class="highlight-description">Working effectively in agile development teams</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Technologies and tools I work with to bring ideas to life</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Frontend Technologies</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">JavaScript (ES6+)</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">Bootstrap</span>
+                        <span class="skill-tag">Responsive Design</span>
+                        <span class="skill-tag">SPA Architecture</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="skill-category-title">React Ecosystem</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Functional Components</span>
+                        <span class="skill-tag">React Hooks</span>
+                        <span class="skill-tag">useState</span>
+                        <span class="skill-tag">useEffect</span>
+                        <span class="skill-tag">Props</span>
+                        <span class="skill-tag">JSX</span>
+                        <span class="skill-tag">React Router</span>
+                        <span class="skill-tag">Component-based Development</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Data Structures & Algorithms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Arrays</span>
+                        <span class="skill-tag">Strings</span>
+                        <span class="skill-tag">Linked Lists</span>
+                        <span class="skill-tag">Trees</span>
+                        <span class="skill-tag">Stacks</span>
+                        <span class="skill-tag">Queues</span>
+                        <span class="skill-tag">Recursion</span>
+                        <span class="skill-tag">Searching</span>
+                        <span class="skill-tag">Sorting</span>
+                        <span class="skill-tag">Dynamic Programming</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3 class="skill-category-title">Tools & Others</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Chrome DevTools</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">Problem Solving</span>
+                        <span class="skill-tag">Debugging</span>
+                        <span class="skill-tag">Clean Code</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="proficiency-section">
+                <h3 class="proficiency-title">Core Proficiencies</h3>
+                <div class="proficiency-grid">
+                    <div class="proficiency-item">
+                        <div class="proficiency-header">
+                            <span class="proficiency-skill">React.js</span>
+                            <span class="proficiency-percent">85%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="proficiency-item">
+                        <div class="proficiency-header">
+                            <span class="proficiency-skill">JavaScript</span>
+                            <span class="proficiency-percent">88%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div class="proficiency-item">
+                        <div class="proficiency-header">
+                            <span class="proficiency-skill">HTML/CSS</span>
+                            <span class="proficiency-percent">90%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="proficiency-item">
+                        <div class="proficiency-header">
+                            <span class="proficiency-skill">Data Structures</span>
+                            <span class="proficiency-percent">82%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 82%"></div>
+                        </div>
+                    </div>
+                    <div class="proficiency-item">
+                        <div class="proficiency-header">
+                            <span class="proficiency-skill">Problem Solving</span>
+                            <span class="proficiency-percent">85%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="proficiency-item">
+                        <div class="proficiency-header">
+                            <span class="proficiency-skill">React Hooks</span>
+                            <span class="proficiency-percent">80%</span>
+                        </div>
+                        <div class="proficiency-bar">
+                            <div class="proficiency-fill" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Certifications & Learning Journey</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">Continuous learning and skill development during my career transition</p>
+            </div>
+
+            <!-- Career Break Explanation -->
+            <div class="career-break-card">
+                <div class="career-break-content">
+                    <div class="career-break-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                    </div>
+                    <div class="career-break-text">
+                        <h3 class="career-break-title">Career Break & Continuous Learning (2018 - 2024)</h3>
+                        <p class="career-break-description">
+                            After completing my BCA in 2018, I took a planned career break to focus on family 
+                            responsibilities and raising my child. During this period, I remained committed to 
+                            my professional growth through continuous learning and skill development.
+                        </p>
+                        <div class="career-break-details">
+                            <div class="career-break-section">
+                                <h4 class="career-break-subtitle">What I accomplished:</h4>
+                                <ul class="career-break-list">
+                                    <li>• Solved 100+ Data Structure & Algorithm problems</li>
+                                    <li>• Completed multiple React and frontend certifications</li>
+                                    <li>• Built 5+ personal projects to practice skills</li>
+                                    <li>• Stayed updated with latest React ecosystem</li>
+                                </ul>
+                            </div>
+                            <div class="career-break-section">
+                                <h4 class="career-break-subtitle">Why I'm ready now:</h4>
+                                <ul class="career-break-list">
+                                    <li>• Strong family support system in place</li>
+                                    <li>• Refreshed technical skills with modern practices</li>
+                                    <li>• Motivated to apply learnings in real projects</li>
+                                    <li>• Committed to long-term career growth</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications Grid -->
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="cert-header">
+                        <div class="cert-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <polyline points="16,18 22,12 16,6"></polyline>
+                                <polyline points="8,6 2,12 8,18"></polyline>
+                            </svg>
+                        </div>
+                        <div class="cert-info">
+                            <h4 class="cert-title">React JS</h4>
+                            <p class="cert-provider">Udemy</p>
+                        </div>
+                    </div>
+                    <div class="cert-skills">
+                        <span class="cert-skill">React Components</span>
+                        <span class="cert-skill">Hooks</span>
+                        <span class="cert-skill">State Management</span>
+                        <span class="cert-skill">JSX</span>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-header">
+                        <div class="cert-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="cert-info">
+                            <h4 class="cert-title">JavaScript Algorithms & Data Structures</h4>
+                            <p class="cert-provider">freeCodeCamp</p>
+                        </div>
+                    </div>
+                    <div class="cert-skills">
+                        <span class="cert-skill">Problem Solving</span>
+                        <span class="cert-skill">Algorithms</span>
+                        <span class="cert-skill">Data Structures</span>
+                        <span class="cert-skill">ES6+</span>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-header">
+                        <div class="cert-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="cert-info">
+                            <h4 class="cert-title">Frontend Development Bootcamp</h4>
+                            <p class="cert-provider">Udemy</p>
+                        </div>
+                    </div>
+                    <div class="cert-skills">
+                        <span class="cert-skill">HTML5</span>
+                        <span class="cert-skill">CSS3</span>
+                        <span class="cert-skill">JavaScript</span>
+                        <span class="cert-skill">Responsive Design</span>
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-header">
+                        <div class="cert-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                        </div>
+                        <div class="cert-info">
+                            <h4 class="cert-title">Full-Stack Web Development (6-Month Course)</h4>
+                            <p class="cert-provider">Cuvette</p>
+                        </div>
+                    </div>
+                    <div class="cert-skills">
+                        <span class="cert-skill">MERN Stack</span>
+                        <span class="cert-skill">Project Development</span>
+                        <span class="cert-skill">Version Control</span>
+                        <span class="cert-skill">Deployment</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Achievements -->
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-number">100+</div>
+                    <div class="achievement-label">DSA Problems Solved</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">5+</div>
+                    <div class="achievement-label">React Projects Built</div>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-number">4</div>
+                    <div class="achievement-label">Professional Certifications</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">A showcase of my recent work and technical capabilities</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Zomato Clone -->
+                <div class="project-card featured">
+                    <div class="project-image-container">
+                        <img src="src/assets/zomato-clone.jpg" alt="Zomato Clone Application" class="project-image">
+                        <div class="featured-badge">Featured</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Zomato Clone Application</h3>
+                        <p class="project-description">
+                            A fully responsive food delivery app clone with restaurant listings, menu display, 
+                            and user-friendly interface. Demonstrates proficiency in React component architecture and routing.
+                        </p>
+                        <div class="project-technologies">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">React Router</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/nehasachan" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                Code
+                            </a>
+                            <a href="#" class="btn btn-primary btn-sm">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15,3 21,3 21,9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weather App -->
+                <div class="project-card featured">
+                    <div class="project-image-container">
+                        <img src="src/assets/weather-app.jpg" alt="Weather Forecast App" class="project-image">
+                        <div class="featured-badge">Featured</div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Weather Forecast App</h3>
+                        <p class="project-description">
+                            Real-time weather application with location-based forecasts, clean UI design, and API integration. 
+                            Shows current weather and 5-day forecast with responsive design.
+                        </p>
+                        <div class="project-technologies">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">REST API</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/nehasachan" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                Code
+                            </a>
+                            <a href="#" class="btn btn-primary btn-sm">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15,3 21,3 21,9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- React Calculator -->
+                <div class="project-card">
+                    <div class="project-image-container">
+                        <img src="src/assets/react-calculator.jpg" alt="React Calculator" class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">React Calculator</h3>
+                        <p class="project-description">
+                            Interactive calculator application with modern UI design and complete mathematical operations. 
+                            Built with React functional components and hooks.
+                        </p>
+                        <div class="project-technologies">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/nehasachan" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                Code
+                            </a>
+                            <a href="#" class="btn btn-primary btn-sm">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15,3 21,3 21,9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Projects -->
+            <div class="additional-projects">
+                <h3 class="additional-projects-title">More Projects</h3>
+                <div class="additional-projects-grid">
+                    <div class="additional-project-card">
+                        <h4 class="additional-project-title">To-Do App</h4>
+                        <p class="additional-project-description">
+                            Task management application with CRUD operations, local storage, and clean interface design.
+                        </p>
+                        <div class="additional-project-technologies">
+                            <span class="additional-tech-tag">React.js</span>
+                            <span class="additional-tech-tag">CSS</span>
+                            <span class="additional-tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                    
+                    <div class="additional-project-card">
+                        <h4 class="additional-project-title">Pokemon App</h4>
+                        <p class="additional-project-description">
+                            Interactive Pokemon explorer with search functionality and detailed Pokemon information display.
+                        </p>
+                        <div class="additional-project-technologies">
+                            <span class="additional-tech-tag">React.js</span>
+                            <span class="additional-tech-tag">CSS</span>
+                            <span class="additional-tech-tag">API Integration</span>
+                        </div>
+                    </div>
+                    
+                    <div class="additional-project-card">
+                        <h4 class="additional-project-title">DSA Problem Solver</h4>
+                        <p class="additional-project-description">
+                            CLI-based application solving 100+ Data Structure and Algorithm problems with detailed explanations.
+                        </p>
+                        <div class="additional-project-technologies">
+                            <span class="additional-tech-tag">JavaScript</span>
+                            <span class="additional-tech-tag">Node.js</span>
+                            <span class="additional-tech-tag">Algorithms</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects-cta">
+                <a href="https://github.com/nehasachan" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.30.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    View All Projects on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Let's Connect</h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">I'm actively seeking opportunities and would love to discuss how I can contribute to your team</p>
+            </div>
+
+            <div class="contact-content">
+                <!-- Contact Information -->
+                <div class="contact-info-section">
+                    <div class="contact-info-card">
+                        <h3 class="contact-info-title">Contact Information</h3>
+                        <div class="contact-info-items">
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="contact-info-details">
+                                    <h4 class="contact-info-label">Email</h4>
+                                    <a href="mailto:nehasachan409@gmail.com" class="contact-info-value">nehasachan409@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    </svg>
+                                </div>
+                                <div class="contact-info-details">
+                                    <h4 class="contact-info-label">Phone</h4>
+                                    <a href="tel:+919834564964" class="contact-info-value">+91-9834564964</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                </div>
+                                <div class="contact-info-details">
+                                    <h4 class="contact-info-label">Location</h4>
+                                    <span class="contact-info-value">Greater Noida, UP, India</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-connect-card">
+                        <h3 class="social-connect-title">Connect With Me</h3>
+                        <div class="social-connect-links">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-connect-link github">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-connect-link linkedin">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-connect-link twitter">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <p class="social-connect-description">
+                            Follow me on social media for updates on my latest projects and tech insights.
+                        </p>
+                    </div>
+
+                    <div class="availability-card">
+                        <h4 class="availability-title">Available for:</h4>
+                        <ul class="availability-list">
+                            <li>• React Developer Role</li>
+                            <li>• Frontend Development Projects</li>
+                            <li>• Junior/Entry-level Positions</li>
+                            <li>• Remote/Hybrid Opportunities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Professional Summary -->
+                <div class="professional-summary-section">
+                    <div class="ready-to-contribute-card">
+                        <h3 class="ready-title">Ready to Contribute</h3>
+                        <p class="ready-description">
+                            I'm actively seeking opportunities to restart my career as a React Developer. 
+                            With a strong foundation in React.js, JavaScript, and Data Structures & Algorithms, 
+                            I'm ready to contribute to meaningful projects.
+                        </p>
+                        <p class="ready-description">
+                            During my career break, I've continuously upskilled through courses, certifications, 
+                            and hands-on projects. I bring fresh perspective, strong problem-solving abilities, 
+                            and genuine enthusiasm for frontend development.
+                        </p>
+                        <div class="key-strengths">
+                            <h4 class="strengths-title">Key Strengths:</h4>
+                            <ul class="strengths-list">
+                                <li class="strength-item">
+                                    <div class="strength-bullet"></div>
+                                    Strong problem-solving with 100+ DSA problems solved
+                                </li>
+                                <li class="strength-item">
+                                    <div class="strength-bullet"></div>
+                                    Modern React development with hooks and functional components
+                                </li>
+                                <li class="strength-item">
+                                    <div class="strength-bullet"></div>
+                                    Responsive web design and clean UI implementation
+                                </li>
+                                <li class="strength-item">
+                                    <div class="strength-bullet"></div>
+                                    Fast learner with excellent communication skills
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="current-focus-card">
+                        <h3 class="focus-title">Current Focus</h3>
+                        <div class="focus-sections">
+                            <div class="focus-section">
+                                <h4 class="focus-subtitle">Immediate Goals:</h4>
+                                <ul class="focus-list">
+                                    <li>• Secure a React Developer position</li>
+                                    <li>• Contribute to real-world projects</li>
+                                    <li>• Collaborate with development teams</li>
+                                    <li>• Continue learning latest technologies</li>
+                                </ul>
+                            </div>
+                            <div class="focus-section">
+                                <h4 class="focus-subtitle">Languages:</h4>
+                                <div class="language-tags">
+                                    <span class="language-tag">English - Proficient</span>
+                                    <span class="language-tag">Hindi - Native</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <h3 class="footer-brand-title">Neha Kisanchand Sachan</h3>
+                    <p class="footer-brand-description">
+                        React Developer with strong DSA fundamentals, ready to contribute to impactful frontend projects.
+                    </p>
+                    <div class="footer-social-links">
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:nehasachan409@gmail.com" class="footer-social-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h4 class="footer-links-title">Quick Links</h4>
+                    <ul class="footer-links-list">
+                        <li><a href="#about" class="footer-link">About</a></li>
+                        <li><a href="#certifications" class="footer-link">Experience</a></li>
+                        <li><a href="#projects" class="footer-link">Projects</a></li>
+                        <li><a href="#contact" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-services">
+                    <h4 class="footer-services-title">Services</h4>
+                    <ul class="footer-services-list">
+                        <li>Frontend Development</li>
+                        <li>React Applications</li>
+                        <li>UI/UX Implementation</li>
+                        <li>Performance Optimization</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2024 Neha Kisanchand Sachan. All rights reserved.</p>
+                <p class="footer-made-with">
+                    Made with <span class="heart">❤️</span> and React
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
